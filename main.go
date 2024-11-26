@@ -5,6 +5,11 @@ import (
 )
 
 func main() {
+    err := rpio.Open()
+    if err != nil {
+        panic(err)
+    }
+
     pin := rpio.Pin(10)
 
     pin.Output()
