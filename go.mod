@@ -1,5 +1,5 @@
 module pitest
 
-go 1.23.2
+go 1.15.0
 
-require github.com/stianeikeland/go-rpio v4.2.0+incompatible // indirect
+require github.com/stianeikeland/go-rpio v4.2.0+incompatible
