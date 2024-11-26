@@ -1,6 +1,7 @@
 package main 
 
 import (
+    "time"
     "github.com/stianeikeland/go-rpio"
 )
 
@@ -10,11 +11,19 @@ func main() {
         panic(err)
     }
 
-    pin := rpio.Pin(10)
+    pinNine := rpio.Pin(0)
+    pinTen := rpio.Pin(10)
 
-    pin.Output()
-    pin.High()
+    pinNine.Input()
+    pinTen.Input()
     for {
-
+        if pinNine.Read() == rpio.High {
+            break;
+        } else {
+            println(pinTen.Read())
+            time.Sleep(100 * time.Millisecond)
+        }
     }
+
+    rpio.Close()
 }
