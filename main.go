@@ -9,6 +9,8 @@ func main() {
     _ = rpio.Open()
 
     pinNine := rpio.Pin(0)
+    pinNine.PullDown()
+
     pinTen := rpio.Pin(10)
 
     pinNine.Input()
